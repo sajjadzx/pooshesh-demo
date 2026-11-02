@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 400" width="100%" height="100%">
+  <rect width="700" height="400" fill="#F7F5F1" rx="12"/>
+  <text x="350" y="34" text-anchor="middle" font-family="Vazirmatn, Tahoma, sans-serif" font-size="16" font-weight="bold" fill="#242321">سیستم‌های پمپاژ بتن آماده؛ پمپ هوایی دکل و لوله‌کشی زمینی</text>
+
+  <!-- بخش سمت راست: پمپ دکل هوایی -->
+  <g transform="translate(360, 50)">
+    <rect x="10" y="10" width="310" height="320" rx="8" fill="#fff" stroke="#e4dfd7"/>
+    <text x="165" y="36" text-anchor="middle" font-family="Vazirmatn, Tahoma, sans-serif" font-size="14" font-weight="bold" fill="#B65A2A">پمپ دکل هوایی (Boom Pump)</text>
+
+    <!-- شاسی کامیون پمپ -->
+    <rect x="30" y="240" width="130" height="40" fill="#70452F" rx="4"/>
+    <rect x="130" y="225" width="40" height="55" fill="#242321" rx="4"/>
+    <circle cx="55" cy="285" r="14" fill="#242321"/>
+    <circle cx="95" cy="285" r="14" fill="#242321"/>
+    <circle cx="150" cy="285" r="14" fill="#242321"/>
+
+    <!-- جک های تعادل باز شده (Outriggers) -->
+    <line x1="40" y1="260" x2="15" y2="295" stroke="#D98245" stroke-width="6" stroke-linecap="round"/>
+    <line x1="150" y1="260" x2="185" y2="295" stroke="#D98245" stroke-width="6" stroke-linecap="round"/>
+    <rect x="5" y="295" width="25" height="5" fill="#242321"/>
+    <rect x="175" y="295" width="25" height="5" fill="#242321"/>
+
+    <!-- بازوهای دکل هیدرولیکی چند تکه -->
+    <line x1="60" y1="240" x2="90" y2="150" stroke="#B65A2A" stroke-width="7" stroke-linecap="round"/>
+    <line x1="90" y1="150" x2="170" y2="90" stroke="#B65A2A" stroke-width="6" stroke-linecap="round"/>
+    <line x1="170" y1="90" x2="250" y2="120" stroke="#B65A2A" stroke-width="5" stroke-linecap="round"/>
+    <!-- شیلنگ خرطومی انتهایی -->
+    <path d="M 250 120 Q 255 160 255 190" fill="none" stroke="#242321" stroke-width="5" stroke-linecap="round"/>
+
+    <!-- مفاصل هیدرولیک -->
+    <circle cx="60" cy="240" r="5" fill="#242321"/>
+    <circle cx="90" cy="150" r="5" fill="#242321"/>
+    <circle cx="170" cy="90" r="5" fill="#242321"/>
+    <circle cx="250" cy="120" r="4" fill="#242321"/>
+
+    <!-- مشخصات -->
+    <text x="165" y="315" text-anchor="middle" font-family="Vazirmatn, Tahoma, sans-serif" font-size="11.5" fill="#7a746d">متراژ دکل: ۲۸ الی ۴۲ متر | قطر لوله: ۵ اینچ (۱۲۵mm)</text>
+  </g>
+
+  <!-- بخش سمت چپ: پمپ زمینی و لوله کشی خطی -->
+  <g transform="translate(20, 50)">
+    <rect x="10" y="10" width="310" height="320" rx="8" fill="#fff" stroke="#e4dfd7"/>
+    <text x="165" y="36" text-anchor="middle" font-family="Vazirmatn, Tahoma, sans-serif" font-size="14" font-weight="bold" fill="#B65A2A">پمپ زمینی و لوله‌کشی ثابت (Stationary Pump)</text>
+
+    <!-- دستگاه پمپ زمینی -->
+    <rect x="30" y="235" width="85" height="50" fill="#70452F" rx="4"/>
+    <circle cx="48" cy="285" r="13" fill="#242321"/>
+    <circle cx="95" cy="285" r="13" fill="#242321"/>
+    <!-- قیف بارگیری بتن -->
+    <polygon points="25,235 45,210 65,210 65,235" fill="#D98245"/>
+
+    <!-- لوله کشی افقی و زانوها -->
+    <path d="M 115 255 L 180 255 A 15 15 0 0 0 195 240 L 195 120 A 15 15 0 0 1 210 105 L 285 105" fill="none" stroke="#242321" stroke-width="6" stroke-linecap="round"/>
+
+    <!-- کوپلینگ ها و بست ها -->
+    <circle cx="150" cy="255" r="5" fill="#B65A2A"/>
+    <circle cx="195" cy="180" r="5" fill="#B65A2A"/>
+    <circle cx="250" cy="105" r="5" fill="#B65A2A"/>
+
+    <!-- برچسب های افت فشار -->
+    <rect x="120" y="270" width="130" height="22" rx="3" fill="#F7F5F1" stroke="#e4dfd7"/>
+    <text x="185" y="285" text-anchor="middle" font-family="Vazirmatn, Tahoma, sans-serif" font-size="10.5" fill="#70452F">مسیر افقی: ۱ متر = ۱ متر افت</text>
+
+    <rect x="205" y="150" width="105" height="22" rx="3" fill="#F7F5F1" stroke="#e4dfd7"/>
+    <text x="257" y="165" text-anchor="middle" font-family="Vazirmatn, Tahoma, sans-serif" font-size="10.5" fill="#B65A2A">ارتفاع قائم: ۱m = ۸m افت</text>
+
+    <rect x="140" y="70" width="105" height="22" rx="3" fill="#F7F5F1" stroke="#e4dfd7"/>
+    <text x="192" y="85" text-anchor="middle" font-family="Vazirmatn, Tahoma, sans-serif" font-size="10.5" fill="#B65A2A">زانو ۹۰°: معادل ۱۲m افت</text>
+
+    <!-- مشخصات پمپ زمینی -->
+    <text x="165" y="315" text-anchor="middle" font-family="Vazirmatn, Tahoma, sans-serif" font-size="11.5" fill="#7a746d">فشار تا ۱۳۰ بار | برد افقی تا ۴۰۰ متر | عمودی تا ۱۲۰ متر</text>
+  </g>
+
+  <!-- نوار هشدار و ایمنی -->
+  <rect x="30" y="360" width="640" height="30" rx="4" fill="#242321"/>
+  <text x="350" y="380" text-anchor="middle" font-family="Vazirmatn, Tahoma, sans-serif" font-size="11.5" fill="#e9e5df">
+    ⚠️ الزامات ایمنی: رعایت فاصله حداقل ۵ متری از خطوط انتقال برق ۲۰kV و تثبیت جک‌های تعادل با تخته زیرجکی الزامی است.
+  </text>
+</svg>
