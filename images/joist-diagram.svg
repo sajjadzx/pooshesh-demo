@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 380" width="100%" height="100%">
+  <rect width="600" height="380" fill="#F7F5F1" rx="12"/>
+  
+  <!-- عنوان نمودار -->
+  <text x="300" y="38" text-anchor="middle" font-family="Vazirmatn, Tahoma, sans-serif" font-size="16" font-weight="bold" fill="#242321">مقطع و اجزای تشکیل‌دهنده تیرچه پاشنه بتنی استاندارد (نشریه ۵۴۳)</text>
+  
+  <!-- خطوط شبکه پس‌زمینه کم‌رنگ -->
+  <defs>
+    <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#e4dfd7" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect x="20" y="55" width="560" height="305" fill="url(#grid)" rx="8"/>
+
+  <!-- پاشنه بتنی تیرچه -->
+  <path d="M 170 280 L 430 280 L 420 330 L 180 330 Z" fill="#b9b2a9" stroke="#70452F" stroke-width="2"/>
+  <!-- بافت دانه های بتن -->
+  <circle cx="210" cy="305" r="4" fill="#7a746d"/>
+  <circle cx="260" cy="295" r="3" fill="#7a746d"/>
+  <circle cx="310" cy="315" r="5" fill="#7a746d"/>
+  <circle cx="360" cy="300" r="4" fill="#7a746d"/>
+  <circle cx="390" cy="318" r="3" fill="#7a746d"/>
+  <circle cx="240" cy="320" r="4" fill="#7a746d"/>
+
+  <!-- میلگردهای کششی پایینی در پاشنه -->
+  <circle cx="215" cy="308" r="11" fill="#B65A2A" stroke="#242321" stroke-width="2"/>
+  <circle cx="385" cy="308" r="11" fill="#B65A2A" stroke="#242321" stroke-width="2"/>
+  <circle cx="300" cy="308" r="10" fill="#D98245" stroke="#242321" stroke-width="2"/>
+
+  <!-- خرپای زیگزاگ -->
+  <polyline points="215,300 300,120 385,300" fill="none" stroke="#242321" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <polyline points="215,300 300,120 385,300" fill="none" stroke="#B65A2A" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- میلگرد بالایی (فشاری) -->
+  <circle cx="300" cy="115" r="13" fill="#B65A2A" stroke="#242321" stroke-width="3"/>
+  <circle cx="300" cy="115" r="5" fill="#fff" opacity="0.4"/>
+
+  <!-- راهنماها و خطوط اشاره گر -->
+  <!-- اشاره به میلگرد فوقانی -->
+  <path d="M 300 102 L 300 75 L 210 75" fill="none" stroke="#B65A2A" stroke-width="1.8" marker-end="url(#arrow)"/>
+  <rect x="50" y="62" width="155" height="26" rx="4" fill="#fff" stroke="#B65A2A"/>
+  <text x="127" y="79" text-anchor="middle" font-family="Vazirmatn, Tahoma, sans-serif" font-size="12" font-weight="bold" fill="#70452F">میلگرد فوقانی (فشاری)</text>
+
+  <!-- اشاره به زیگزاگ -->
+  <path d="M 335 190 L 450 190" fill="none" stroke="#B65A2A" stroke-width="1.8"/>
+  <rect x="455" y="177" width="115" height="26" rx="4" fill="#fff" stroke="#B65A2A"/>
+  <text x="512" y="194" text-anchor="middle" font-family="Vazirmatn, Tahoma, sans-serif" font-size="12" font-weight="bold" fill="#70452F">میلگرد عرضی (زیگزاگ)</text>
+
+  <!-- اشاره به میلگردهای کششی -->
+  <path d="M 215 320 L 215 350 L 130 350" fill="none" stroke="#B65A2A" stroke-width="1.8"/>
+  <rect x="35" y="337" width="165" height="26" rx="4" fill="#fff" stroke="#B65A2A"/>
+  <text x="117" y="354" text-anchor="middle" font-family="Vazirmatn, Tahoma, sans-serif" font-size="11.5" font-weight="bold" fill="#70452F">میلگردهای کششی اصلی (A3)</text>
+
+  <!-- اشاره به پاشنه بتنی -->
+  <path d="M 425 310 L 470 310" fill="none" stroke="#B65A2A" stroke-width="1.8"/>
+  <rect x="475" y="297" width="105" height="26" rx="4" fill="#fff" stroke="#B65A2A"/>
+  <text x="527" y="314" text-anchor="middle" font-family="Vazirmatn, Tahoma, sans-serif" font-size="11.5" font-weight="bold" fill="#70452F">پاشنه بتنی C20</text>
+
+  <!-- اندازه گذاری عرض پاشنه -->
+  <line x1="180" y1="345" x2="420" y2="345" stroke="#7a746d" stroke-width="1.5"/>
+  <line x1="180" y1="340" x2="180" y2="350" stroke="#7a746d" stroke-width="1.5"/>
+  <line x1="420" y1="340" x2="420" y2="350" stroke="#7a746d" stroke-width="1.5"/>
+  <text x="300" y="360" text-anchor="middle" font-family="Vazirmatn, Tahoma, sans-serif" font-size="11" fill="#7a746d">عرض پاشنه: ۱۲ الی ۱۴ سانتی‌متر</text>
+</svg>

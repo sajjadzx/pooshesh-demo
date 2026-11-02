@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 380" width="100%" height="100%">
+  <rect width="600" height="380" fill="#F7F5F1" rx="12"/>
+  
+  <text x="300" y="38" text-anchor="middle" font-family="Vazirmatn, Tahoma, sans-serif" font-size="16" font-weight="bold" fill="#242321">انواع بلوک‌های سیمانی استاندارد (سبک لیکا و سنگین ماسه‌ای)</text>
+  
+  <!-- بلوک ۱: بلوک سبک دوجداره پوکه‌ای (۴۰×۲۰×۲۰) -->
+  <g transform="translate(40, 75)">
+    <!-- بدنه ایزومتریک بلوک -->
+    <rect x="0" y="30" width="150" height="130" fill="#cfc8bf" stroke="#70452F" stroke-width="2" rx="4"/>
+    <!-- حفره های داخلی دوجداره -->
+    <rect x="18" y="50" width="48" height="90" fill="#242321" rx="3"/>
+    <rect x="84" y="50" width="48" height="90" fill="#242321" rx="3"/>
+    
+    <!-- لبه بالایی سه بعدی -->
+    <polygon points="0,30 35,0 185,0 150,30" fill="#ded9d2" stroke="#70452F" stroke-width="2"/>
+    <polygon points="150,30 185,0 185,130 150,160" fill="#a9a29a" stroke="#70452F" stroke-width="2"/>
+    
+    <!-- برچسب مشخصات -->
+    <text x="90" y="190" text-anchor="middle" font-family="Vazirmatn, Tahoma, sans-serif" font-size="13" font-weight="bold" fill="#B65A2A">بلوک سبک لیکا (پوکه‌ای)</text>
+    <text x="90" y="210" text-anchor="middle" font-family="Vazirmatn, Tahoma, sans-serif" font-size="12" fill="#70452F">ابعاد: ۴۰ × ۲۰ × ۲۰ سانتی‌متر</text>
+    <text x="90" y="230" text-anchor="middle" font-family="Vazirmatn, Tahoma, sans-serif" font-size="11.5" fill="#7a746d">استاندارد ملی ایران ۷۷۸۲</text>
+    <text x="90" y="250" text-anchor="middle" font-family="Vazirmatn, Tahoma, sans-serif" font-size="11" fill="#242321">عایق صوت و حرارت (دیوار خارجی)</text>
+  </g>
+
+  <!-- بلوک ۲: بلوک سبک تیغه‌ای (۴۰×۱۰×۲۰) -->
+  <g transform="translate(230, 75)">
+    <rect x="15" y="30" width="105" height="130" fill="#cfc8bf" stroke="#70452F" stroke-width="2" rx="4"/>
+    <!-- حفره ها -->
+    <rect x="30" y="50" width="32" height="90" fill="#242321" rx="2"/>
+    <rect x="72" y="50" width="32" height="90" fill="#242321" rx="2"/>
+    
+    <polygon points="15,30 45,0 150,0 120,30" fill="#ded9d2" stroke="#70452F" stroke-width="2"/>
+    <polygon points="120,30 150,0 150,130 120,160" fill="#a9a29a" stroke="#70452F" stroke-width="2"/>
+    
+    <text x="80" y="190" text-anchor="middle" font-family="Vazirmatn, Tahoma, sans-serif" font-size="13" font-weight="bold" fill="#B65A2A">بلوک سبک تیغه‌ای</text>
+    <text x="80" y="210" text-anchor="middle" font-family="Vazirmatn, Tahoma, sans-serif" font-size="12" fill="#70452F">ابعاد: ۴۰ × ۱۰ × ۲۰ سانتی‌متر</text>
+    <text x="80" y="230" text-anchor="middle" font-family="Vazirmatn, Tahoma, sans-serif" font-size="11.5" fill="#7a746d">وزن بسیار سبک (حدود ۵.۵kg)</text>
+    <text x="80" y="250" text-anchor="middle" font-family="Vazirmatn, Tahoma, sans-serif" font-size="11" fill="#242321">مخصوص تیغه‌چینی و دیوارهای داخلی</text>
+  </g>
+
+  <!-- بلوک ۳: بلوک سنگین ماسه‌ای ته پر (۴۰×۲۰×۲۰) -->
+  <g transform="translate(390, 75)">
+    <rect x="10" y="30" width="140" height="130" fill="#999187" stroke="#70452F" stroke-width="2" rx="4"/>
+    <!-- ته پر - سه بعدی بدون سوراخ باز -->
+    <polygon points="10,30 45,0 185,0 150,30" fill="#b9b2a9" stroke="#70452F" stroke-width="2"/>
+    <polygon points="150,30 185,0 185,130 150,160" fill="#7a746d" stroke="#70452F" stroke-width="2"/>
+    
+    <!-- بافت سنگدانه بتنی -->
+    <circle cx="50" cy="80" r="3" fill="#555"/>
+    <circle cx="90" cy="110" r="4" fill="#555"/>
+    <circle cx="120" cy="70" r="3" fill="#555"/>
+    <circle cx="70" cy="130" r="3" fill="#555"/>
+
+    <text x="95" y="190" text-anchor="middle" font-family="Vazirmatn, Tahoma, sans-serif" font-size="13" font-weight="bold" fill="#B65A2A">بلوک سنگین ماسه‌ای (ته‌پر)</text>
+    <text x="95" y="210" text-anchor="middle" font-family="Vazirmatn, Tahoma, sans-serif" font-size="12" fill="#70452F">ابعاد: ۴۰ × ۲۰ × ۲۰ سانتی‌متر</text>
+    <text x="95" y="230" text-anchor="middle" font-family="Vazirmatn, Tahoma, sans-serif" font-size="11.5" fill="#7a746d">استاندارد ملی ایران ۷۰-۱</text>
+    <text x="95" y="250" text-anchor="middle" font-family="Vazirmatn, Tahoma, sans-serif" font-size="11" fill="#242321">دیوار محوطه، باغ، استخر و باربر</text>
+  </g>
+
+  <!-- نوار پایین -->
+  <rect x="40" y="335" width="520" height="30" rx="6" fill="#fff" stroke="#e4dfd7"/>
+  <text x="300" y="355" text-anchor="middle" font-family="Vazirmatn, Tahoma, sans-serif" font-size="11.5" fill="#70452F">کلیه بلوک‌ها با دستگاه‌های تمام‌اتوماتیک هیدرولیکی و پرس پرقدرت با تراکم یکنواخت تولید می‌شوند.</text>
+</svg>
