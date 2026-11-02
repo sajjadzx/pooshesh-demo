@@ -18,10 +18,36 @@
     img.addEventListener("error", function () { img.style.visibility = "hidden"; });
   });
 
+  // منوی آبشاری (Dropdown)
+  var navItems = document.querySelectorAll(".nav-item.has-dropdown");
+  navItems.forEach(function (item) {
+    var trigger = item.querySelector(".nav-trigger");
+    if (!trigger) return;
+    trigger.addEventListener("click", function (e) {
+      e.stopPropagation();
+      var wasOpen = item.classList.contains("open");
+      navItems.forEach(function (other) { other.classList.remove("open"); });
+      if (!wasOpen) item.classList.add("open");
+    });
+  });
+
+  document.addEventListener("click", function (e) {
+    if (!e.target.closest(".nav-item")) {
+      navItems.forEach(function (item) { item.classList.remove("open"); });
+    }
+  });
+
   // منوی موبایل
   var b = document.querySelector(".burger"), n = document.querySelector(".nav");
-  b.addEventListener("click", function () { n.classList.toggle("open"); });
-  n.addEventListener("click", function (e) { if (e.target.tagName === "A") n.classList.remove("open"); });
+  if (b && n) {
+    b.addEventListener("click", function () { n.classList.toggle("open"); });
+    n.addEventListener("click", function (e) {
+      if (e.target.tagName === "A") {
+        n.classList.remove("open");
+        navItems.forEach(function (item) { item.classList.remove("open"); });
+      }
+    });
+  }
 
   // فرم (نمایشی)
   var f = document.getElementById("quote-form"), m = document.getElementById("form-msg");
