@@ -1,0 +1,348 @@
+<!doctype html><html lang="fa" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>محاسبه آنلاین حجم بتن و آنالیز مصالح (BOM) | پوشش ساختمان مشهد</title><meta name="description" content="ماشین‌حساب آنلاین محاسبه حجم بتن‌ریزی فونداسیون، سقف، ستون، دیوار برشی و مخزن آب و فاضلاب همراه با آنالیز مصرف سیمان، ماسه، شن و افزودنی‌ها (BOM) در متر مکعب بر اساس استاندارد ملی ایران ۶۰۴۴"><meta name="theme-color" content="#242321">
+<link rel="stylesheet" href="css/style.css"></head><body><header class="header"><div class="container">
+<a href="index.html" class="brand"><img class="js-logo" src="images/logo.svg" alt="لوگوی پوشش ساختمان"><span>پوشش ساختمان</span></a>
+<nav class="nav" aria-label="منوی اصلی"><a href="index.html">خانه</a><a href="about.html">درباره ما</a><a href="concrete.html">بتن آماده</a><a href="calculator.html" class="active">محاسبه آنلاین بتن</a><a href="order.html">سفارش بتن</a><a href="equipment.html">تجهیزات</a><a href="lab.html">آزمایشگاه</a><a href="delivery.html">حمل و پمپاژ</a><a href="articles.html">مقالات تخصصی</a><a href="contact.html">تماس</a></nav>
+<a href="order.html" class="btn btn-primary">استعلام قیمت</a><button class="burger" aria-label="منو">☰</button></div></header><main><div class="page-hero"><div class="container"><nav class="crumb"><a href="index.html">خانه</a> / محاسبه آنلاین حجم بتن و آنالیز BOM</nav><h1>سیستم هوشمند محاسبه حجم بتن و آنالیز مصالح (BOM)</h1></div></div><section class="alt">
+  <div class="container">
+    <div class="eyebrow">ابزار مهندسی رایگان</div>
+    <h2>محاسبه دقیق حجم بتن‌ریزی و تفکیک مصالح در هر متر مکعب</h2>
+    <p class="lead">بر اساس استاندارد ملی ایران (ISIRI 6044) و مبحث نهم مقررات ملی ساختمان؛ ابعاد سازه خود را وارد کنید تا حجم دقیق، تعداد تراک میکسر و آنالیز کامل مصالح مصرفی (سیمان، سنگدانه، آب و افزودنی‌ها) فوراً محاسبه شود.</p>
+
+    <div class="calc-tabs">
+      <button type="button" class="calc-tab active" data-tab="foundation">پی و فونداسیون</button>
+      <button type="button" class="calc-tab" data-tab="roof">سقف و دال بتنی</button>
+      <button type="button" class="calc-tab" data-tab="column">ستون و دیوار برشی</button>
+      <button type="button" class="calc-tab" data-tab="tank">مخزن آب و فاضلاب (آب‌بند)</button>
+    </div>
+
+    <form id="concrete-calculator-form" class="calc-grid">
+      <div class="calc-box">
+        <!-- تب فونداسیون -->
+        <div id="panel-foundation" class="calc-panel active">
+          <h3 style="margin-bottom:16px">مشخصات پی و فونداسیون</h3>
+          <div class="field" style="margin-bottom:16px">
+            <label for="f-type">نوع فونداسیون</label>
+            <select id="f-type">
+              <option value="strip">فونداسیون نواری (متداول ساختمان‌های شهری)</option>
+              <option value="raft">فونداسیون گسترده / رادیه (یکپارچه)</option>
+              <option value="isolated">فونداسیون منفرد + شناژهای رابط</option>
+            </select>
+          </div>
+
+          <!-- نواری -->
+          <div id="f-strip-group" style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+            <div class="field"><label for="f-strip-l">مجموع طول نوارها (متر)</label><input id="f-strip-l" type="number" step="0.1" value="60"></div>
+            <div class="field"><label for="f-strip-w">عرض نوار (متر)</label><input id="f-strip-w" type="number" step="0.05" value="0.9"></div>
+            <div class="field full"><label for="f-strip-h">ارتفاع / ضخامت فونداسیون (متر)</label><input id="f-strip-h" type="number" step="0.05" value="0.8"></div>
+          </div>
+
+          <!-- رادیه -->
+          <div id="f-raft-group" style="display:none;grid-template-columns:1fr 1fr;gap:16px">
+            <div class="field"><label for="f-raft-l">طول پلان فونداسیون (متر)</label><input id="f-raft-l" type="number" step="0.1" value="20"></div>
+            <div class="field"><label for="f-raft-w">عرض پلان فونداسیون (متر)</label><input id="f-raft-w" type="number" step="0.1" value="12"></div>
+            <div class="field full"><label for="f-raft-h">ضخامت دال فونداسیون (متر)</label><input id="f-raft-h" type="number" step="0.05" value="0.9"></div>
+          </div>
+
+          <!-- منفرد + شناژ -->
+          <div id="f-iso-group" style="display:none;grid-template-columns:1fr 1fr;gap:16px">
+            <div class="field"><label for="f-iso-count">تعداد پی‌های تکی</label><input id="f-iso-count" type="number" value="12"></div>
+            <div class="field"><label for="f-iso-l">طول هر پی (متر)</label><input id="f-iso-l" type="number" step="0.1" value="1.8"></div>
+            <div class="field"><label for="f-iso-w">عرض هر پی (متر)</label><input id="f-iso-w" type="number" step="0.1" value="1.8"></div>
+            <div class="field"><label for="f-iso-h">ارتفاع هر پی (متر)</label><input id="f-iso-h" type="number" step="0.05" value="0.7"></div>
+            <div class="field"><label for="f-tie-l">مجموع طول شناژها (متر)</label><input id="f-tie-l" type="number" step="0.1" value="45"></div>
+            <div class="field"><label for="f-tie-w">عرض شناژ (متر)</label><input id="f-tie-w" type="number" step="0.05" value="0.4"></div>
+            <div class="field full"><label for="f-tie-h">ارتفاع شناژ (متر)</label><input id="f-tie-h" type="number" step="0.05" value="0.6"></div>
+          </div>
+        </div>
+
+        <!-- تب سقف -->
+        <div id="panel-roof" class="calc-panel">
+          <h3 style="margin-bottom:16px">مشخصات سقف و دال</h3>
+          <div class="field" style="margin-bottom:16px">
+            <label for="r-type">نوع سیستم سقف</label>
+            <select id="r-type">
+              <option value="joist">سقف تیرچه و بلوک / فوم یونولیت (متداول‌ترین)</option>
+              <option value="slab">سقف دال بتنی توپر (Solid Slab)</option>
+              <option value="waffle">سقف وافل (یک‌طرفه یا دوطرفه)</option>
+              <option value="deck">سقف عرشه فولادی (Metal Deck)</option>
+            </select>
+          </div>
+
+          <div class="field" style="margin-bottom:16px">
+            <label for="r-area">مساحت سقف (متر مربع)</label>
+            <input id="r-area" type="number" step="1" value="200">
+          </div>
+
+          <!-- تیرچه بلوک -->
+          <div id="r-joist-group" style="display:grid;grid-template-columns:1fr;gap:16px">
+            <div class="field">
+              <label for="r-joist-thick">حجم بتن معادل به ازای هر متر مربع سقف (متر مکعب بر متر مربع)</label>
+              <select id="r-joist-thick">
+                <option value="0.15">۰.۱۵ متر مکعب بر متر مربع (تیرچه تکی، ضخامت رویه ۵cm)</option>
+                <option value="0.17" selected>۰.۱۷ متر مکعب بر متر مربع (استاندارد کارگاهی مشهد، با احتساب پوترها)</option>
+                <option value="0.19">۰.۱۹ متر مکعب بر متر مربع (تیرچه دوبل / دهانه‌های بالای ۶ متر)</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- دال بتنی -->
+          <div id="r-slab-group" style="display:none;grid-template-columns:1fr;gap:16px">
+            <div class="field"><label for="r-slab-thick">ضخامت دال بتنی (متر)</label><input id="r-slab-thick" type="number" step="0.01" value="0.15"></div>
+          </div>
+
+          <!-- وافل -->
+          <div id="r-waffle-group" style="display:none;grid-template-columns:1fr;gap:16px">
+            <div class="field"><label for="r-waffle-factor">ضریب حجم بتن دال و تیرچه‌های وافل (متر مکعب بر متر مربع)</label>
+              <select id="r-waffle-factor">
+                <option value="0.22">۰.۲۲ (قالب با ارتفاع ۲۰cm)</option>
+                <option value="0.25" selected>۰.۲۵ (قالب با ارتفاع ۲۵ الی ۳۰cm استاندارد)</option>
+                <option value="0.28">۰.۲۸ (قالب‌های عمیق ۳۵cm یا توپر پای ستون‌ها)</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- عرشه فولادی -->
+          <div id="r-deck-group" style="display:none;grid-template-columns:1fr;gap:16px">
+            <div class="field"><label for="r-deck-factor">ضخامت معادل بتن روی عرشه (متر مکعب بر متر مربع)</label>
+              <select id="r-deck-factor">
+                <option value="0.09">۰.۰۹ متر مکعب بر متر مربع (حداقل ضخامت ۵cm روی کنگره)</option>
+                <option value="0.11" selected>۰.۱۱ متر مکعب بر متر مربع (استاندارد ۷cm روی کنگره)</option>
+                <option value="0.13">۰.۱۳ متر مکعب بر متر مربع (ضخامت ۱۰cm روی کنگره)</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- تب ستون و دیوار -->
+        <div id="panel-column" class="calc-panel">
+          <h3 style="margin-bottom:16px">مشخصات ستون و دیوار برشی</h3>
+          <div class="field" style="margin-bottom:16px">
+            <label for="c-type">نوع مقطع</label>
+            <select id="c-type">
+              <option value="rect">ستون‌های چهارگوش (مربعی یا مستطیلی)</option>
+              <option value="circle">ستون‌های دایره‌ای (گرد)</option>
+              <option value="wall">دیوار برشی / دیوار حائل بتنی</option>
+            </select>
+          </div>
+
+          <!-- ستون مستطیلی -->
+          <div id="c-rect-group" style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+            <div class="field"><label for="c-count">تعداد ستون‌ها</label><input id="c-count" type="number" value="12"></div>
+            <div class="field"><label for="c-h">ارتفاع ستون (متر)</label><input id="c-h" type="number" step="0.1" value="3.2"></div>
+            <div class="field"><label for="c-l">طول بعد اول ستون (متر)</label><input id="c-l" type="number" step="0.05" value="0.5"></div>
+            <div class="field"><label for="c-w">طول بعد دوم ستون (متر)</label><input id="c-w" type="number" step="0.05" value="0.5"></div>
+          </div>
+
+          <!-- ستون دایره‌ای -->
+          <div id="c-circle-group" style="display:none;grid-template-columns:1fr 1fr;gap:16px">
+            <div class="field"><label for="c-cir-count">تعداد ستون‌های گرد</label><input id="c-cir-count" type="number" value="8"></div>
+            <div class="field"><label for="c-cir-h">ارتفاع ستون (متر)</label><input id="c-cir-h" type="number" step="0.1" value="3.2"></div>
+            <div class="field full"><label for="c-cir-dia">قطر ستون (متر)</label><input id="c-cir-dia" type="number" step="0.05" value="0.5"></div>
+          </div>
+
+          <!-- دیوار برشی -->
+          <div id="w-wall-group" style="display:none;grid-template-columns:1fr 1fr;gap:16px">
+            <div class="field"><label for="w-count">تعداد دیوارها</label><input id="w-count" type="number" value="2"></div>
+            <div class="field"><label for="w-h">ارتفاع دیوار (متر)</label><input id="w-h" type="number" step="0.1" value="3.2"></div>
+            <div class="field"><label for="w-l">طول دیوار (متر)</label><input id="w-l" type="number" step="0.1" value="4.5"></div>
+            <div class="field"><label for="w-t">ضخامت دیوار (متر)</label><input id="w-t" type="number" step="0.05" value="0.3"></div>
+          </div>
+        </div>
+
+        <!-- تب مخزن آب و فاضلاب -->
+        <div id="panel-tank" class="calc-panel">
+          <h3 style="margin-bottom:16px">مشخصات مخزن آب و فاضلاب (طراحی هیدرولیکی و آب‌بند)</h3>
+          <div class="field" style="margin-bottom:16px">
+            <label for="t-type">شکل هندسی مخزن</label>
+            <select id="t-type">
+              <option value="rect">مخزن مکعب مستطیلی (آب آشامیدنی، سپتیک، استخر بتنی)</option>
+              <option value="cylinder">مخزن استوانه‌ای (مدور)</option>
+            </select>
+          </div>
+
+          <!-- مخزن مکعبی -->
+          <div id="t-rect-group" style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+            <div class="field"><label for="t-l">طول خارجی مخزن (متر)</label><input id="t-l" type="number" step="0.1" value="6.0"></div>
+            <div class="field"><label for="t-w">عرض خارجی مخزن (متر)</label><input id="t-w" type="number" step="0.1" value="4.0"></div>
+            <div class="field"><label for="t-h">ارتفاع کلی مخزن (متر)</label><input id="t-h" type="number" step="0.1" value="3.0"></div>
+            <div class="field"><label for="t-base-t">ضخامت دال کف مخزن (متر)</label><input id="t-base-t" type="number" step="0.05" value="0.35"></div>
+            <div class="field"><label for="t-wall-t">ضخامت دیواره‌های جانبی (متر)</label><input id="t-wall-t" type="number" step="0.05" value="0.30"></div>
+            <div class="field"><label for="t-roof-t">ضخامت دال سقف مخزن (متر)</label><input id="t-roof-t" type="number" step="0.05" value="0.25"></div>
+          </div>
+
+          <!-- مخزن استوانه‌ای -->
+          <div id="t-cyl-group" style="display:none;grid-template-columns:1fr 1fr;gap:16px">
+            <div class="field"><label for="t-cyl-dia">قطر خارجی مخزن (متر)</label><input id="t-cyl-dia" type="number" step="0.1" value="5.0"></div>
+            <div class="field"><label for="t-cyl-h">ارتفاع کلی مخزن (متر)</label><input id="t-cyl-h" type="number" step="0.1" value="3.5"></div>
+            <div class="field"><label for="t-cyl-base">ضخامت دال کف (متر)</label><input id="t-cyl-base" type="number" step="0.05" value="0.35"></div>
+            <div class="field"><label for="t-cyl-wall">ضخامت دیواره استوانه (متر)</label><input id="t-cyl-wall" type="number" step="0.05" value="0.30"></div>
+            <div class="field full"><label for="t-cyl-roof">ضخامت دال سقف (متر)</label><input id="t-cyl-roof" type="number" step="0.05" value="0.25"></div>
+          </div>
+          <p id="calc-tank-recommendation" style="font-size:13px;color:var(--primary);margin-top:14px;background:#fbf3ec;padding:10px 14px;border-radius:6px;display:none">
+            💡 توجه: برای مخازن آب آشامیدنی و پساب‌های فاضلاب، انتخاب رده «بتن آب‌بند مخازن (تیپ ۵)» با نسبت W/C زیر ۰.۴۰ و ژل میکروسیلیس جهت جلوگیری از نشت و خوردگی اسیدی توصیه اکید می‌شود.
+          </p>
+        </div>
+
+        <!-- انتخاب رده مقاومتی و ضریب پرت -->
+        <div style="margin-top:28px;padding-top:20px;border-top:1px solid var(--line);display:grid;grid-template-columns:1fr 1fr;gap:16px">
+          <div class="field">
+            <label for="calc-grade">رده مقاومتی بتن (استاندارد ۶۰۴۴)</label>
+            <select id="calc-grade">
+              <option value="c25" selected>رده C25/30 - عیار ۳۵۰ (استاندارد سازه‌ای متداول)</option>
+              <option value="c30">رده C30/37 - عیار ۴۰۰ (ستون، دیوار برشی و سازه سنگین)</option>
+              <option value="c35">رده C35/45 - عیار ۴۵۰ (سازه‌های ویژه و پُر مقاومت)</option>
+              <option value="waterproof">بتن آب‌بند مخازن آب و فاضلاب (عیار ۴۰۰ + تیپ ۵ + میکروسیلیس)</option>
+              <option value="c20">رده C20/25 - عیار ۳۰۰ (کفسازی و بتن‌ریزی‌های سبک)</option>
+              <option value="magar">بتن مگر / نظافت - عیار ۱۵۰</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="calc-wastage">درصد پرت کارگاهی و نشست (Wastage)</label>
+            <select id="calc-wastage">
+              <option value="0">۰ درصد (حجم هندسی خالص)</option>
+              <option value="3">۳ درصد (دقت قالب‌بندی بسیار بالا)</option>
+              <option value="5" selected>۵ درصد (استاندارد کارگاهی متعارف در مشهد)</option>
+              <option value="7">۷ درصد (قالب‌بندی چوبی سنتی یا خاک‌برداری ناصاف)</option>
+              <option value="10">۱۰ درصد (شرایط ناهموار یا پمپاژ با لوله‌کشی طولانی)</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- پنل نتایج محاسبات و BOM -->
+      <aside class="calc-result-box">
+        <h3>خلاصه احجام و ناوگان حمل</h3>
+        <div class="calc-summary-stat">
+          <span>حجم هندسی خالص:</span>
+          <b id="res-raw-vol">۰ متر مکعب</b>
+        </div>
+        <div class="calc-summary-stat" style="border:1px solid var(--accent);background:rgba(217,130,69,.1)">
+          <span>حجم نهایی با احتساب پرت:</span>
+          <b id="res-final-vol" style="color:#fff">۰ متر مکعب</b>
+        </div>
+        <div class="calc-summary-stat">
+          <span>تعداد تراک میکسر مورد نیاز:</span>
+          <b id="res-mixer-loads" style="font-size:20px;color:var(--accent)">۰ سرویس</b>
+        </div>
+        <div style="font-size:12.5px;color:#cfc8bf;margin-bottom:16px">
+          بر مبنای ظرفیت میانگین ۷.۵ متر مکعب در هر میکسر ناوگان پوشش ساختمان
+        </div>
+
+        <h3 style="margin-top:20px">آنالیز مصرف مصالح (BOM)</h3>
+        <p style="font-size:12.5px;color:#b9b2a9;margin-bottom:10px">
+          طرح اختلاط بر اساس: <strong id="res-grade-name" style="color:var(--accent)">-</strong>
+        </p>
+
+        <table class="bom-table">
+          <thead>
+            <tr>
+              <th>عنوان متریال</th>
+              <th>مقدار برآوردی مصرفی</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>سیمان پرتلند</td>
+              <td id="bom-cement">۰</td>
+            </tr>
+            <tr>
+              <td>ماسه شسته استاندارد (۰-۶)</td>
+              <td id="bom-sand">۰</td>
+            </tr>
+            <tr>
+              <td>شن شکسته بادامی و نخودی</td>
+              <td id="bom-gravel">۰</td>
+            </tr>
+            <tr>
+              <td>آب اختلاط مجاز بتن</td>
+              <td id="bom-water">۰</td>
+            </tr>
+            <tr>
+              <td>فوق‌روان‌کننده کربوکسیلاتی</td>
+              <td id="bom-superplast">۰</td>
+            </tr>
+            <tr id="bom-silica-row" style="display:none">
+              <td>ژل میکروسیلیس و واترپروف</td>
+              <td id="bom-silica">۰</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <a href="order.html" id="btn-transfer-order" class="btn btn-primary" style="width:100%;margin-top:14px;padding:12px">
+          ثبت سفارش بتن بر اساس این محاسبه ←
+        </a>
+        <a href="contact.html" class="btn btn-ghost js-phone-link" style="width:100%;margin-top:8px;padding:10px;font-size:13.5px">
+          مشاوره تلفنی با مهندسین کارخانه
+        </a>
+      </aside>
+    </form>
+  </div>
+</section>
+
+<!-- بخش راهنمای فنی و استانداردها -->
+<section>
+  <div class="container">
+    <div class="eyebrow">مشخصات مهندسی</div>
+    <h2>جدول تطابق رده‌های مقاومتی و استانداردهای بتن ایران (ISIRI 6044)</h2>
+    <p class="lead">کلیه بتن‌های تولیدی کارخانه پوشش ساختمان بر اساس ضوابط مبحث نهم مقررات ملی ساختمان و استانداردهای روز بتن ایران با گواهی کنترل کیفیت آزمایشگاهی عرضه می‌گردد.</p>
+
+    <div style="overflow-x:auto">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>رده بتن</th>
+            <th>مقاومت مشخصه ۲۸ روزه</th>
+            <th>عیار سیمان پیشنهادی</th>
+            <th>اسلامپ پیشنهادی پمپی</th>
+            <th>کاربرد اصلی در پروژه</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>C20/25</strong></td>
+            <td>استوانه‌ای ۲۰ / مکعبی ۲۵ MPa</td>
+            <td>۳۰۰ - ۳۵۰ kg/m³</td>
+            <td>۸ الی ۱۲ cm</td>
+            <td>کفسازی، محوطه‌سازی، پی‌های سبک و دیوارهای پیرامونی کم‌بار</td>
+          </tr>
+          <tr>
+            <td><strong>C25/30</strong></td>
+            <td>استوانه‌ای ۲۵ / مکعبی ۳۰ MPa</td>
+            <td>۳۵۰ - ۴۰۰ kg/m³</td>
+            <td>۱۰ الی ۱۴ cm</td>
+            <td><strong>متداول‌ترین رده سازه‌ای:</strong> فونداسیون، سقف تیرچه بلوک و دال، تیر و ستون‌های ساختمان‌های شهری</td>
+          </tr>
+          <tr>
+            <td><strong>C30/37</strong></td>
+            <td>استوانه‌ای ۳۰ / مکعبی ۳۷ MPa</td>
+            <td>۴۰۰ - ۴۲۰ kg/m³</td>
+            <td>۱۲ الی ۱۶ cm</td>
+            <td>ستون‌ها و دیوارهای برشی سازه‌های بلندمرتبه، شمع‌ها و دال‌های پیش‌تنیده</td>
+          </tr>
+          <tr>
+            <td><strong>C35/45</strong></td>
+            <td>استوانه‌ای ۳۵ / مکعبی ۴۵ MPa</td>
+            <td>۴۵۰ kg/m³</td>
+            <td>۱۴ الی ۱۸ cm</td>
+            <td>سازه‌های سنگین، پُل‌ها، پایه‌های پربار صنعتی و محیط‌های مهاجم شیمیایی</td>
+          </tr>
+          <tr>
+            <td><strong>بتن آب‌بند مخازن</strong></td>
+            <td>مقاومت ویژه با W/C کمتر از ۰.۴۰</td>
+            <td>۳۸۰ - ۴۲۰ kg/m³ (تیپ ۵)</td>
+            <td>۱۰ الی ۱۴ cm</td>
+            <td><strong>مخازن آب شرب، استخرها، لوله‌ها و سپتیک‌های فاضلاب</strong> با ژل میکروسیلیس و واترپروف فاقد ترک حرارتی</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+</main><footer><div class="container">
+<div class="brand" style="color:#fff"><img class="js-logo" src="images/logo.svg" alt="" width="34" height="34"><span>پوشش ساختمان</span></div>
+<div>تولید بتن آماده · مشهد · تلفن: <span class="js-phone-text"></span></div>
+<div class="demo-note" style="margin:0">نسخه نمایشی — اطلاعات نهایی نیست</div></div></footer>
+<div class="float-call"><a class="call js-phone-link" href="contact.html">تماس</a><a class="wa js-wa" href="#">واتساپ</a><a class="quote" href="order.html">سفارش بتن</a></div>
+<script src="js/config.js"></script><script src="js/main.js"></script><script src="js/calculator.js"></script></body></html>
